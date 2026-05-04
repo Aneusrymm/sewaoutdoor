@@ -1,65 +1,108 @@
-import Image from "next/image";
+import { tents, shelters, sleepingSystems, sepatu, alatMasak, carrier, hardware, lightning, accessories, laundry, paket } from "@/lib/data";
+import { TentCarousel } from "@/components/TentCarousel";
+import { Tent } from "@/lib/data";
+import Link from "next/link";
+
+interface SectionData {
+  id: string;
+  label: string;
+  title: string;
+  subtitle: string;
+  items: Tent[];
+}
+
+const sections: SectionData[] = [
+  { id: "tenda", label: "Koleksi Tenda", title: "Pilih Tenda\nyang Tepat Untukmu", subtitle: "Tersedia berbagai kapasitas, cocok untuk solo hingga camping keluarga besar.", items: tents },
+  { id: "shelter", label: "Koleksi Shelter", title: "Perlindungan Ekstra\nuntuk Petualanganmu", subtitle: "Flysheet, tarp tent, dan bivak untuk perlindungan tambahan dari cuaca.", items: shelters },
+  { id: "sleeping", label: "Sleeping System", title: "Tidur Nyenyak\ndi Alam Terbuka", subtitle: "Sleeping bag, matras, dan bantal camping untuk istirahat yang berkualitas.", items: sleepingSystems },
+  { id: "sepatu", label: "Sepatu & Alas Kaki", title: "Langkah Mantap\ndi Setiap Medan", subtitle: "Sepatu hiking, sandal gunung, dan pelindung kaki untuk segala kondisi.", items: sepatu },
+  { id: "masak", label: "Alat Masak", title: "Masak Praktis\ndi Alam Bebas", subtitle: "Kompor, cooking set, dan peralatan masak portable untuk outdoor.", items: alatMasak },
+  { id: "carrier", label: "Carrier & Tas", title: "Bawa Semua\nPerlengkapanmu", subtitle: "Carrier, daypack, dan aksesoris tas untuk pendakian dan hiking.", items: carrier },
+  { id: "hardware", label: "Hardware", title: "Peralatan Pendukung\nCamping", subtitle: "Trekking pole, hammock, kursi dan meja lipat untuk kenyamanan outdoor.", items: hardware },
+  { id: "lightning", label: "Lightning & Electrical", title: "Pencahayaan\n& Daya Listrik", subtitle: "Headlamp, lentera, powerbank, dan panel surya untuk kebutuhan listrik.", items: lightning },
+  { id: "accessories", label: "Accessories & Support", title: "Aksesoris\nPendukung", subtitle: "Botol minum, dry bag, sarung tangan, dan perlengkapan pendukung lainnya.", items: accessories },
+  { id: "laundry", label: "Laundry", title: "Layanan Cuci\n& Perawatan", subtitle: "Cuci profesional untuk tenda, sleeping bag, carrier, dan re-coating waterproof.", items: laundry },
+  { id: "paket", label: "Paket", title: "Paket Hemat\nSiap Camping", subtitle: "Paket lengkap siap pakai untuk solo, couple, keluarga, dan pendakian.", items: paket },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* Hero Section */}
+      <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center bg-gray-50 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-white z-0"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50 z-0"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50 z-0"></div>
+        
+        <div 
+          className="absolute inset-0 z-0 opacity-10" 
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1504280327326-5b6fb89db788?auto=format&fit=crop&q=80&w=2000')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <span className="inline-block py-1 px-3 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-6 tracking-wide uppercase">
+            Nuevanesia Rental
+          </span>
+          <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 tracking-tight">
+            Sewa Alat Camping <br className="hidden md:block" /> di Bandung
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Eksplorasi alam tanpa batas. Temukan tenda berkualitas untuk setiap petualanganmu dengan harga terjangkau.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a 
+            href="#tenda"
+            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Lihat Koleksi Tenda
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Product Sections */}
+      {sections.map((section, index) => (
+        <div key={section.id}>
+          {/* Horizontal Divider (between sections) */}
+          {index > 0 && (
+            <div className="px-[5%]">
+              <hr className="max-w-[1200px] mx-auto border-0 border-t border-[#e0e0e0]" />
+            </div>
+          )}
+
+          <section id={section.id} className="py-[56px] px-[5%] bg-white">
+            <div className="max-w-[1200px] mx-auto">
+              <div className="flex flex-wrap justify-between items-end mb-[36px] gap-[16px]">
+                <div>
+                  <p className="text-[11px] tracking-[0.14em] uppercase text-[#999999] mb-[10px]">
+                    {section.label}
+                  </p>
+                  <h2 className="font-serif text-[clamp(28px,4vw,40px)] leading-[1.15] mb-[8px] text-[#111111]">
+                    {section.title.split('\n').map((line, i) => (
+                      <span key={i}>{line}{i === 0 && <br />}</span>
+                    ))}
+                  </h2>
+                </div>
+                <div className="flex flex-col items-end gap-[12px] pb-[8px]">
+                  <p className="text-[#555555] max-w-[480px] text-[14px] leading-[1.7] m-0">
+                    {section.subtitle}
+                  </p>
+                  <Link
+                    href={`/category/${section.id}`}
+                    className="text-[13px] font-medium text-[#111] border border-[#e0e0e0] px-[20px] py-[8px] rounded-[4px] no-underline hover:bg-[#111] hover:text-white transition-colors"
+                  >
+                    View All →
+                  </Link>
+                </div>
+              </div>
+              
+              <TentCarousel tents={section.items} />
+            </div>
+          </section>
+        </div>
+      ))}
+    </>
   );
 }
