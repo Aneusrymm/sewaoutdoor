@@ -1,5 +1,6 @@
 import { tents, shelters, sleepingSystems, sepatu, alatMasak, carrier, hardware, lightning, accessories, laundry, paket } from "@/lib/data";
 import { TentCarousel } from "@/components/TentCarousel";
+import { CategoryNav } from "@/components/CategoryNav";
 import { Tent } from "@/lib/data";
 import Link from "next/link";
 
@@ -61,6 +62,10 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* Sticky Category Nav */}
+      <CategoryNav sections={sections} />
+      <div className="h-[48px]"></div>
 
       {/* Product Sections */}
       {sections.map((section, index) => (
