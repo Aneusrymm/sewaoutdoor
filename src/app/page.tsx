@@ -30,42 +30,35 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center bg-gray-50 overflow-hidden">
+      <section className="relative w-full aspect-video md:aspect-auto md:h-[80vh] md:min-h-[600px] flex items-center justify-center bg-gray-50 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-white z-0"></div>
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50 z-0"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50 z-0"></div>
-        
-        <div 
-          className="absolute inset-0 z-0 opacity-10" 
+
+        <div
+          className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1504280327326-5b6fb89db788?auto=format&fit=crop&q=80&w=2000')",
+            backgroundImage: "url('/img.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
 
         <div className="container relative z-10 mx-auto px-4 text-center">
-          <span className="inline-block py-1 px-3 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-6 tracking-wide uppercase">
-            Nuevanesia Rental
+          <span className="inline-block py-1 px-3 rounded-full bg-gray-100 text-gray-600 text-[10px] md:text-sm font-medium mb-3 md:mb-6 tracking-wide uppercase">
+            Four Son Rental
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 tracking-tight">
-            Sewa Alat Camping <br className="hidden md:block" /> di Bandung
+          <h1 className="text-4xl md:text-8xl font-rubik text-white mb-2 md:mb-6 tracking-wider drop-shadow-lg">
+            Sewa Alat Camping <br className="hidden md:block" /> di Bogor
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-[10px] md:text-xl text-white/90 max-w-2xl mx-auto mb-4 md:mb-10 leading-relaxed line-clamp-2 md:line-clamp-none drop-shadow-md">
             Eksplorasi alam tanpa batas. Temukan tenda berkualitas untuk setiap petualanganmu dengan harga terjangkau.
           </p>
-          <a 
-            href="#tenda"
-            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
-          >
-            Lihat Koleksi Tenda
-          </a>
         </div>
       </section>
 
-      {/* Sticky Category Nav */}
+      {/* Category Nav */}
       <CategoryNav sections={sections} />
-      <div className="h-[48px]"></div>
 
       {/* Product Sections */}
       {sections.map((section, index) => (
@@ -90,7 +83,7 @@ export default function Home() {
                     ))}
                   </h2>
                 </div>
-                <div className="flex flex-col items-end gap-[12px] pb-[8px]">
+                <div className="flex flex-col items-end gap-[12px]">
                   <p className="text-[#555555] max-w-[480px] text-[14px] leading-[1.7] m-0">
                     {section.subtitle}
                   </p>
@@ -102,7 +95,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              
+
               <TentCarousel tents={section.items} />
             </div>
           </section>
