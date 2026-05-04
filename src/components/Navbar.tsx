@@ -23,7 +23,7 @@ export function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-[100] px-[5%] h-[64px] flex items-center justify-between bg-white/90 backdrop-blur-[8px] border-b border-[#e0e0e0]">
         <Link href="/" className="font-serif text-[22px] text-[#111111] no-underline tracking-[-0.02em]">
-          Nuevanesia
+          Four Son
         </Link>
 
         {/* Checkout flow: Step indicator inside navbar */}

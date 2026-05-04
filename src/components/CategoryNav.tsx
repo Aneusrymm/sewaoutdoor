@@ -38,8 +38,8 @@ export function CategoryNav({ sections }: { sections: Section[] }) {
   };
 
   return (
-    <div className="fixed top-[64px] left-0 right-0 z-[50] bg-white border-b border-[#e0e0e0]">
-      <div className="max-w-[1200px] mx-auto relative flex items-center">
+    <div className="sticky top-[64px] z-[90] bg-white border-b border-[#e0e0e0]">
+      <div className="max-w-[1200px] mx-auto relative flex items-center px-4">
         {/* Left arrow */}
         {canScrollLeft && (
           <button
@@ -54,13 +54,13 @@ export function CategoryNav({ sections }: { sections: Section[] }) {
         {/* Scrollable buttons */}
         <div
           ref={scrollRef}
-          className="flex gap-[6px] py-[10px] px-[16px] overflow-x-auto hide-scrollbar w-full"
+          className="flex gap-[6px] py-[10px] overflow-x-auto hide-scrollbar w-full"
         >
           {sections.map((section) => (
             <Link
               key={section.id}
               href={`/category/${section.id}`}
-              className="px-[14px] py-[7px] text-[12px] font-medium text-[#555] bg-[#f5f5f5] rounded-[20px] no-underline whitespace-nowrap hover:bg-[#111] hover:text-white transition-colors flex-shrink-0"
+              className="px-[18px] py-[9px] text-[13px] font-medium text-[#111] bg-[#f5f5f5] rounded-full no-underline whitespace-nowrap hover:bg-[#111] hover:text-white transition-all flex-shrink-0 border border-transparent hover:border-[#111]"
             >
               {section.label}
             </Link>

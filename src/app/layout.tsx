@@ -6,9 +6,9 @@ import { Footer } from "@/components/Footer";
 import { CartToast } from "@/components/CartToast";
 
 export const metadata: Metadata = {
-  title: "Nuevanesia | Sewa Alat Camping di Bandung",
-  description: "Rental tenda camping Bandung lengkap dan terpercaya. Tersedia tenda dome, tenda kapasitas 2–6 orang, waterproof, anti angin, dan cocok untuk hiking, camping keluarga.",
-  keywords: ["sewa tenda bandung", "rental alat camping bandung", "sewa alat camping di bandung", "Nuevanesia", "tenda dome bandung"],
+  title: "Four Son | Sewa Alat Camping di Bogor",
+  description: "Rental tenda camping Bogor lengkap dan terpercaya. Tersedia tenda dome, tenda kapasitas 2–6 orang, waterproof, anti angin, dan cocok untuk hiking, camping keluarga.",
+  keywords: ["sewa tenda bogor", "rental alat camping bogor", "sewa alat camping di bogor", "Four Son", "tenda dome bogor"],
 };
 
 export default function RootLayout({
