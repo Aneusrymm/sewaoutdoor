@@ -77,6 +77,9 @@ export function Navbar() {
               <Link href="/#shelter" className="no-underline text-[#555555] text-[13px] font-medium tracking-[0.04em] uppercase transition-colors hover:text-[#111111]">Shelter</Link>
             </li>
             <li>
+              <Link href="/blog" className="no-underline text-[#555555] text-[13px] font-medium tracking-[0.04em] uppercase transition-colors hover:text-[#111111]">Blog</Link>
+            </li>
+            <li>
               <Link href="/#paket" className="no-underline text-[#555555] text-[13px] font-medium tracking-[0.04em] uppercase transition-colors hover:text-[#111111]">Paket</Link>
             </li>
             <li>
@@ -128,6 +131,7 @@ export function Navbar() {
             <Link href="/#lightning" onClick={() => setMenuOpen(false)} className="text-[18px] font-medium text-[#111] no-underline">Lightning & Electrical</Link>
             <Link href="/#accessories" onClick={() => setMenuOpen(false)} className="text-[18px] font-medium text-[#111] no-underline">Accessories</Link>
             <Link href="/#laundry" onClick={() => setMenuOpen(false)} className="text-[18px] font-medium text-[#111] no-underline">Laundry</Link>
+            <Link href="/blog" onClick={() => setMenuOpen(false)} className="text-[18px] font-medium text-[#111] no-underline">Blog</Link>
             <Link href="/#paket" onClick={() => setMenuOpen(false)} className="text-[18px] font-medium text-[#111] no-underline">Paket</Link>
             <Link href="/#tenda" onClick={() => setMenuOpen(false)} className="mt-[8px] text-center py-[14px] bg-[#111] text-white !text-white text-[14px] font-medium rounded-[4px] no-underline">Pesan Sekarang</Link>
           </div>
